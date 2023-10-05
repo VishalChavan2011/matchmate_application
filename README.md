@@ -1,4 +1,4 @@
-[
+
 # MatchMate application
 
 In this application will display the list of the profile to the user. The user can either accept or decline the profile. The profile data is fetched from the server and the is stored locally in Room database.
@@ -31,6 +31,20 @@ In this application will display the list of the profile to the user. The user c
 - The loading spinner will be shown when the data fetching is in progress.
 - The error screen will be displayed for the error.
 
+## Screenshots
 
+### 1) Profile Screen
+![Profile Screen](https://github.com/VishalChavan2011/matchmate_application/blob/master/Screenshot/Profile_Screen.jpg?raw=true)
 
-](https://github.com/VishalChavan2011/matchmate_application/blob/master/Screenshot/Declined.jpg?raw=true)https://github.com/VishalChavan2011/matchmate_application/blob/master/Screenshot/Declined.jpg?raw=true
+### 2) Error Screen
+![Error Screen](https://github.com/VishalChavan2011/matchmate_application/blob/master/Screenshot/Error_Screen.jpg?raw=true)
+
+### 3) Loading Screen
+![Loading Screen](https://github.com/VishalChavan2011/matchmate_application/blob/master/Screenshot/Loading_Screen.jpg?raw=true)
+
+### 4) Accepted
+![Accepted](https://github.com/VishalChavan2011/matchmate_application/blob/master/Screenshot/Accepted.jpg?raw=true)
+
+### 5) Declined
+![Declined](https://github.com/VishalChavan2011/matchmate_application/blob/master/Screenshot/Declined.jpg?raw=true)
+
