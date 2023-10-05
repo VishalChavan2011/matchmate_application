@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="10dp"
+    app:cardBackgroundColor="@color/card_background"
+    android:layout_marginVertical="5dp"
+    android:paddingVertical="5dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="10dp"
+            app:contentPadding="10dp"
+            app:cardMaxElevation="12dp"
+            app:cardPreventCornerOverlap="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="1">
+
+
+            <ImageView
+                android:id="@+id/imageview_profileimage"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:scaleType="fitXY" />
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/textview_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/cardview"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:maxLines="2"
+            android:textAlignment="center"
+            android:ellipsize="end"
+            android:singleLine="false"
+            style="@style/MaterialAlertDialog.Material3.Title.Text"/>
+
+        <TextView
+            android:id="@+id/textview_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            style="@style/TextAppearance.AppCompat.Menu"
+            app:layout_constraintTop_toBottomOf="@id/textview_name"
+            app:drawableLeftCompat="@drawable/baseline_person_24" />
+
+        <TextView
+            android:id="@+id/textview_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="30dp"
+            app:layout_constraintStart_toEndOf="@id/textview_age"
+            app:layout_constraintTop_toBottomOf="@id/textview_name"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            style="@style/MaterialAlertDialog.Material3.Body.Text.CenterStacked"
+            app:drawableLeftCompat="@drawable/baseline_location_on_24" />
+
+        <LinearLayout
+            android:id="@+id/button_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textview_age"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="5dp"
+            android:visibility="visible"
+            app:layout_constraintHeight_percent="0.15"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/image_button_like"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:textAllCaps="false"
+                android:src="@drawable/baseline_thumb_up_alt_24"
+                android:layout_marginHorizontal="10dp"
+                android:background="@drawable/like_rounded_corner" />
+
+            <ImageButton
+                android:id="@+id/image_button_dislike"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:textAllCaps="false"
+                android:layout_weight="1"
+                android:src="@drawable/baseline_thumb_down_alt_24"
+                android:layout_marginHorizontal="10dp"
+                android:background="@drawable/dislike_rounded_corner"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textview_profile_status"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textview_age"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="5dp"
+            app:layout_constraintHeight_percent="0.1"
+            android:visibility="gone" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</com.google.android.material.card.MaterialCardView>
