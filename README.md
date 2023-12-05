@@ -27,7 +27,7 @@ In this application will display the list of the profile to the user. The user c
 - As fetching the data from the network may vary depending upon the time. On the next launch, firstly the data from the database will be displayed and then the data from the network server will be fetched.
 - This fetched data will be displayed to the list as well as stored in the database.
 - The user can accept and declined the profile using the button displayed on the profile card.
-- This response will persist using room database.
+- This response will persist using Room database.
 - The loading spinner will be shown when the data fetching is in progress.
 - The error screen will be displayed for the error.
 
