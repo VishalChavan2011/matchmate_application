@@ -20,9 +20,8 @@ interface ProfileRepository {
 
     /**
      * Function the retrieve profile information from the database or server.
-     * @param fromDatabase Boolean representing that the data should be fetched from the database.
      */
-    suspend fun getProfileInformation(fromDatabase: Boolean = false)
+    suspend fun getProfileInformation()
 
     /**
      * Function to update the profile information as per the user action.

@@ -31,11 +31,10 @@ class ProfileViewModel @Inject constructor(private val profileRepository: Profil
 
     /**
      * Fetch data from the server and database
-     * @param fromDatabase boolean representing if the data should be fetched from database or server.
      */
-    fun fetchData(fromDatabase: Boolean = true) {
+    private fun fetchData() {
         viewModelScope.launch(Dispatchers.IO) {
-            profileRepository.getProfileInformation(fromDatabase)
+            profileRepository.getProfileInformation()
         }
     }
 

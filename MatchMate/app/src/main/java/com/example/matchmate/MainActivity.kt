@@ -64,9 +64,6 @@ class MainActivity : AppCompatActivity() {
                 is NetworkResult.Success -> {
                     binding.progressbar.visibility = View.GONE
                     binding.recylerviewProfiles.visibility = View.VISIBLE
-                    if(it.dataFromDatabase) {
-                        viewModel.fetchData(false)
-                    }
                 }
 
                 is NetworkResult.Error -> {

@@ -38,20 +38,14 @@ class ProfileRepositoryImpl @Inject constructor(
         profileDatabase.getProfileDao()
     }
 
-    override suspend fun getProfileInformation(fromDatabase: Boolean) {
-        _networkResultLiveData.postValue(NetworkResult.Loading())
-        if(fromDatabase) {
-            val profileData = profileDao.getProfileData()
-            if(profileData != null) {
-                _networkResultLiveData.postValue(NetworkResult.Success(dataFromDatabase = true))
-                _profileLiveData.postValue(profileData)
-            }
-            else {
-                getDataFromNetwork()
-            }
-        } else {
-            getDataFromNetwork()
+    override suspend fun getProfileInformation() {
+        _networkResultLiveData.postValue(NetworkResult.Loading)
+        val profileData = profileDao.getProfileData()
+        if(profileData.isNotEmpty()) {
+            _networkResultLiveData.postValue(NetworkResult.Success)
+            _profileLiveData.postValue(profileData)
         }
+        getDataFromNetwork()
     }
 
     override suspend fun updateProfile(profileId: Int, isLiked: Boolean, profileStatus: Boolean) {
@@ -65,15 +59,12 @@ class ProfileRepositoryImpl @Inject constructor(
                  if (result.isSuccessful) {
                      result.body()?.let {
                          val results = getProfileData(it.results)
-                         val updatedList = profileLiveData.value?.plus(results)
-                         if (updatedList != null) {
-                             profileDao.addProfileList(updatedList)
-                             _profileLiveData.postValue(updatedList!!)
-                             _networkResultLiveData.postValue(NetworkResult.Success(dataFromDatabase = false))
-                         }
-                         else {
-                             _networkResultLiveData.postValue(NetworkResult.Error())
-                         }
+                         android.util.Log.d("INFO_RESULT", results.toString())
+                         val updatedList = profileLiveData.value?.plus(results) ?: results
+                         android.util.Log.d("INFO_UPDATE", updatedList.toString())
+                         profileDao.addProfileList(updatedList)
+                         _profileLiveData.postValue(updatedList)
+                         _networkResultLiveData.postValue(NetworkResult.Success)
                      }
                  } else if (result.errorBody() != null) {
                      val errorMessage =

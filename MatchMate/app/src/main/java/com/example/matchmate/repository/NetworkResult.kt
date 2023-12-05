@@ -5,8 +5,8 @@ package com.example.matchmate.repository
  */
 sealed class NetworkResult (
 ) {
-    class Loading() : NetworkResult()
-    class Success(val dataFromDatabase: Boolean) : NetworkResult()
+    object Loading : NetworkResult()
+    object Success : NetworkResult()
     class Error(val errorCode: Int? = null, val errorMessage: String? = null) : NetworkResult()
 }
 
